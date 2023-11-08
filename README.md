@@ -4,15 +4,6 @@
 
 This is a Python program that solves the classic 8-Puzzle problem using BFS algorithm.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Algorithms](#algorithms)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Introduction
 
 The 8-Puzzle is a popular sliding puzzle that consists of a 3x3 grid with 8 numbered tiles and an empty space. The goal is to arrange the tiles in the correct order by sliding them into the empty space. This project provides a Python implementation to solve the 8-Puzzle problem using BFS algorithm.
