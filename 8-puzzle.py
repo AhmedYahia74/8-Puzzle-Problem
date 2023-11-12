@@ -1,3 +1,4 @@
+import queue
 import copy as c
 import time
 
@@ -33,8 +34,8 @@ def do_operation(x, y, tox, toy, state):
     return state
 
 # Initialize a queue for breadth-first search
-q = []
-q.append(1)
+q = queue.Queue()
+q.put(1)
 
 # Store states by their unique IDs
 getting_state_by_id = {1: start}
@@ -53,10 +54,8 @@ getting_id_by_state[tstart] = 1
 id = 2
 
 # Perform breadth-first search
-while len(q) >= 1:
-    curr = q[0]
-    q.pop(0)
-
+while q.qsize()>= 1:
+    curr = q.get()
     # Check if the current state matches the goal state
     if list(list(row) for row in getting_state_by_id[curr]) == goal:
         print(cost[curr])
@@ -74,7 +73,7 @@ while len(q) >= 1:
             tcpy = tuple(tuple(row) for row in cpy)
 
             if tcpy not in getting_id_by_state:
-                q.append(id)
+                q.put(id)
                 getting_state_by_id[id] = tcpy
                 getting_id_by_state[tcpy] = id
                 cost[id] = cost[curr] + 1
